@@ -22,7 +22,13 @@ let b = 32
 /*: Question 1
 ### **(1)** Print "true" if a modulo b is equal to zero.
 */
-
+switch a % b == 0{
+case true:
+        print("true")
+    
+default :
+        print("false")
+}
 
 
 
@@ -33,8 +39,11 @@ let b = 32
 /*: Question 2
 ### **(2)** Print 'true' if y divided by x is greater than three, otherwise print 'false'.
 */
-
-
+switch y/Int(x) > 3{
+case true:
+    print("true")
+default:
+    print("false")}
 
 
 
@@ -43,7 +52,11 @@ let b = 32
 /*: Question 3
 ### **(3)** Print 'true' if y is greater than x and a divided by b is greater than 9. If there's any need to convert to either an `Int` or a `Double` to satisfy the requirements of a binary operator (you can choose whichever one you want to convert to to satisfy the requirements).
 */
-
+switch y > Int(x) && a/b > 9 {
+case true:
+    print("true")
+default:
+    print("false")}
 
 
 
@@ -56,10 +69,17 @@ let b = 32
 */
 
 
+func isGreater(int1: Int, int2: Int) -> String {
+    switch int1 > int2 {
+    case true:
+        return "Yep"
+    default:
+        return "Nope"
+    }
+}
 
 
-
-
+print(isGreater(a, int2: b))
 
 
 
@@ -71,6 +91,32 @@ let b = 32
  isForceWith("Mary") // false
  ```
 */
+
+
+func isForceWith(name: String) -> Bool {
+    
+    let forceUsers = ["Luke", "Leia", "Anakin", "Obi Wan", "Yoda", "Vader"]
+    
+    var count = 0
+    
+    for forceName in forceUsers {
+        switch forceName == name {
+        case true:
+            count += 1
+        default:
+            continue
+        }
+    }
+    
+    switch count == 1 {
+    case true:
+        return true
+    default:
+        return false
+    }
+}
+
+print(isForceWith("Leia"))
 
 
 
@@ -88,8 +134,24 @@ let b = 32
  ```
 */
 
+func isInRange(int1: Int) {
 
+    
+    switch  int1 {
+    case 0...3:
+        print("small")
+        
+    case 4...6:
+        print("medium")
+        
+    case 7...10:
+        print("big")
+        
+    default:
+        print("not sure")
+    }
 
+}
 
 
 
